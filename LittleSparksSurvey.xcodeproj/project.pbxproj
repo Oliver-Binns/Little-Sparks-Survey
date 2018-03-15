@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A789991E2055989800697135 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491B20508DAD00108CF5 /* Quicksand-Bold.ttf */; };
+		A789991F2055989B00697135 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491E20508DAD00108CF5 /* Quicksand-Light.ttf */; };
+		A78999202055989D00697135 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491C20508DAD00108CF5 /* Quicksand-Medium.ttf */; };
+		A7899921205598A000697135 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491D20508DAD00108CF5 /* Quicksand-Regular.ttf */; };
 		A7CF490920508C6000108CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF490820508C6000108CF5 /* AppDelegate.swift */; };
 		A7CF490B20508C6000108CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF490A20508C6000108CF5 /* ViewController.swift */; };
 		A7CF490E20508C6000108CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CF490C20508C6000108CF5 /* Main.storyboard */; };
@@ -107,7 +111,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Oliver Binns";
 				TargetAttributes = {
 					A7CF490420508C6000108CF5 = {
@@ -141,7 +145,11 @@
 			files = (
 				A7CF491320508C6000108CF5 /* LaunchScreen.storyboard in Resources */,
 				A7CF491020508C6000108CF5 /* Assets.xcassets in Resources */,
+				A7899921205598A000697135 /* Quicksand-Regular.ttf in Resources */,
 				A7CF490E20508C6000108CF5 /* Main.storyboard in Resources */,
+				A789991E2055989800697135 /* Quicksand-Bold.ttf in Resources */,
+				A789991F2055989B00697135 /* Quicksand-Light.ttf in Resources */,
+				A78999202055989D00697135 /* Quicksand-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +201,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -200,6 +209,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -250,6 +260,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -257,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
