@@ -38,7 +38,7 @@ extension CAShapeLayer{
 		let ratio = PetalLayer.aspectRatio
 		let curveAt = (1 / 3) * height
 		let width = ratio * height
-		let distance =  (34.875 / PetalLayer.originalWidth) * width
+		let distance =  34.875 * width / PetalLayer.originalWidth
 		
 		
 		
@@ -49,7 +49,7 @@ extension CAShapeLayer{
 		let center = CGPoint(x: width / 2, y: curveAt)
 		let west = CGPoint(x: 0, y: curveAt)
 		
-		let starCurveLevel: CGFloat = 1.2
+		let starCurveLevel = 10.93 * width / PetalLayer.originalWidth
 		
 		let path = CGMutablePath()
 		path.move(to: north)
@@ -58,8 +58,8 @@ extension CAShapeLayer{
 					  control2: east.applying(CGAffineTransform(translationX: 0, y: -distance))
 		)
 		path.addQuadCurve(to: bottomR, control: east.applying(CGAffineTransform(translationX: 0, y: distance)))
-		path.addQuadCurve(to: center, control: CGPoint(x: center.x * starCurveLevel, y: center.y))
-		path.addQuadCurve(to: bottomL, control: CGPoint(x: center.x / starCurveLevel, y: center.y))
+		path.addQuadCurve(to: center, control: CGPoint(x: center.x + starCurveLevel, y: center.y))
+		path.addQuadCurve(to: bottomL, control: CGPoint(x: center.x - starCurveLevel, y: center.y))
 		path.addQuadCurve(to: west, control: west.applying(CGAffineTransform(translationX: 0, y: distance)))
 		path.addCurve(to: north,
 					  control1: west.applying(CGAffineTransform(translationX: 0, y: -distance)),
