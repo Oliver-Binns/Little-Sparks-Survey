@@ -11,7 +11,9 @@
 		A789991F2055989B00697135 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491E20508DAD00108CF5 /* Quicksand-Light.ttf */; };
 		A78999202055989D00697135 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491C20508DAD00108CF5 /* Quicksand-Medium.ttf */; };
 		A7899921205598A000697135 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CF491D20508DAD00108CF5 /* Quicksand-Regular.ttf */; };
-		A78DCB5D20A758670041430D /* LittleSparks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DCB5C20A758670041430D /* LittleSparks.swift */; };
+		A78DCB5D20A758670041430D /* LittleSparksLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DCB5C20A758670041430D /* LittleSparksLogo.swift */; };
+		A78DCB6820A87F560041430D /* PetalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DCB6720A87F560041430D /* PetalLayer.swift */; };
+		A78DCB6A20A8811F0041430D /* FaceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DCB6920A8811F0041430D /* FaceLayer.swift */; };
 		A7CF490920508C6000108CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF490820508C6000108CF5 /* AppDelegate.swift */; };
 		A7CF490B20508C6000108CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF490A20508C6000108CF5 /* ViewController.swift */; };
 		A7CF490E20508C6000108CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CF490C20508C6000108CF5 /* Main.storyboard */; };
@@ -20,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A78DCB5C20A758670041430D /* LittleSparks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSparks.swift; sourceTree = "<group>"; };
+		A78DCB5C20A758670041430D /* LittleSparksLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSparksLogo.swift; sourceTree = "<group>"; };
+		A78DCB6720A87F560041430D /* PetalLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetalLayer.swift; sourceTree = "<group>"; };
+		A78DCB6920A8811F0041430D /* FaceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceLayer.swift; sourceTree = "<group>"; };
 		A7CF490520508C6000108CF5 /* LittleSparksSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleSparksSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CF490820508C6000108CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7CF490A20508C6000108CF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +60,9 @@
 		A78DCB6020A75B6D0041430D /* Logo */ = {
 			isa = PBXGroup;
 			children = (
-				A78DCB5C20A758670041430D /* LittleSparks.swift */,
+				A78DCB5C20A758670041430D /* LittleSparksLogo.swift */,
+				A78DCB6720A87F560041430D /* PetalLayer.swift */,
+				A78DCB6920A8811F0041430D /* FaceLayer.swift */,
 			);
 			path = Logo;
 			sourceTree = "<group>";
@@ -179,7 +185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A78DCB5D20A758670041430D /* LittleSparks.swift in Sources */,
+				A78DCB6820A87F560041430D /* PetalLayer.swift in Sources */,
+				A78DCB5D20A758670041430D /* LittleSparksLogo.swift in Sources */,
+				A78DCB6A20A8811F0041430D /* FaceLayer.swift in Sources */,
 				A7CF490B20508C6000108CF5 /* ViewController.swift in Sources */,
 				A7CF490920508C6000108CF5 /* AppDelegate.swift in Sources */,
 			);

@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-	@IBOutlet var logo: LittleSparks!
+	@IBOutlet var logo: LittleSparksLogo!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
