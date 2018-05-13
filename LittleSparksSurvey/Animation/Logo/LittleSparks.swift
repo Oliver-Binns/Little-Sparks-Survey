@@ -19,17 +19,20 @@ let gradients = [
 class LittleSparks: UIView {
 	let petalRatio: CGFloat = 125.485 / 188.224
 	
-	override func draw(_ rect: CGRect) {
+	func display(_ animated: Bool){
 		for i in 0..<5{
-			let petalWidth = rect.width * 0.3453
+			let petalWidth = bounds.width * 0.3453
 			let petalHeight = petalWidth / petalRatio
 			
-			let petal = CAGradientLayer.Petal(frame: CGRect(x: (rect.width - petalWidth) / 2, y: 0, width: petalWidth, height: petalHeight))
+			let petal = CAGradientLayer.Petal(frame: CGRect(x: (bounds.width - petalWidth) / 2, y: 0, width: petalWidth, height: petalHeight))
 			petal.colors = gradients[i]
 			petal.rotate(angle: -CGFloat(i) * 2 * CGFloat.pi / 5)
 			
 			layer.addSublayer(petal)
 			
+			if let mask = petal.mask as? CAShapeLayer{
+				mask.petalPath(animated)
+			}
 		}
 	}
 }
@@ -48,33 +51,39 @@ extension CALayer{
 extension CAGradientLayer{
 	static func Petal(frame: CGRect) -> CAGradientLayer{
 		let layer = CAGradientLayer()
-		
 		layer.frame = frame
-		
+
 		let shapeMask = CAShapeLayer()
+		let lineWidth: CGFloat = 5
+		shapeMask.frame = CGRect(origin: CGPoint(x: lineWidth, y: lineWidth), size: frame.insetBy(dx: lineWidth * 2, dy: lineWidth * 2).size)
+		shapeMask.fillColor = UIColor.clear.cgColor
+		shapeMask.strokeColor = UIColor.black.cgColor
+		shapeMask.lineWidth = lineWidth
 		shapeMask.path = CGMutablePath()
 		layer.mask = shapeMask
 		
-		layer.shape()
-		
 		return layer
 	}
-	
-	func shape(){
-		guard let shape = mask as? CAShapeLayer else { return }
-		
+}
+extension CAShapeLayer{
+	func petalPath(_ animated: Bool){
 		let height = bounds.height
-	
 		let originalWidth: CGFloat = 125.485
 		let ratio = originalWidth / 188.224
 		let curveAt = (1 / 3) * height
 		let width = ratio * height
 		let distance =  (34.875 / originalWidth) * width
 		
+		
+		
 		let north = CGPoint(x: width / 2, y: 0)
 		let east = CGPoint(x: width, y: curveAt)
-		let south = CGPoint(x: north.x, y: height)
+		let bottomR = CGPoint(x: 3 * width / 4, y: 2 * height / 3)
+		let bottomL = CGPoint(x: width / 4, y: 2 * height / 3)
+		let center = CGPoint(x: width / 2, y: curveAt)
 		let west = CGPoint(x: 0, y: curveAt)
+		
+		let starCurveLevel: CGFloat = 1.2
 		
 		let path = CGMutablePath()
 		path.move(to: north)
@@ -82,11 +91,32 @@ extension CAGradientLayer{
 					  control1: north.applying(CGAffineTransform(translationX: distance, y: 0)),
 					  control2: east.applying(CGAffineTransform(translationX: 0, y: -distance))
 		)
-		path.addQuadCurve(to: south, control: east.applying(CGAffineTransform(translationX: 0, y: distance)))
+		path.addQuadCurve(to: bottomR, control: east.applying(CGAffineTransform(translationX: 0, y: distance)))
+		path.addQuadCurve(to: center, control: CGPoint(x: center.x * starCurveLevel, y: center.y))
+		path.addQuadCurve(to: bottomL, control: CGPoint(x: center.x / starCurveLevel, y: center.y))
 		path.addQuadCurve(to: west, control: west.applying(CGAffineTransform(translationX: 0, y: distance)))
 		path.addCurve(to: north,
 					  control1: west.applying(CGAffineTransform(translationX: 0, y: -distance)),
 					  control2: north.applying(CGAffineTransform(translationX: -distance, y: 0))
 		)
+		
+		if(animated){
+			CATransaction.begin()
+			let a = CABasicAnimation(keyPath: "strokeEnd")
+			a.duration = 4
+			a.fromValue = 0
+			a.toValue = 1
+			a.isRemovedOnCompletion = false
+			a.fillMode = kCAFillModeBoth
+			a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+			CATransaction.setCompletionBlock{
+				self.fillColor = self.strokeColor
+			}
+			self.path = path
+			self.add(a, forKey: "strokeEndAnimation")
+			CATransaction.commit()
+		}else{
+			self.path = path
+		}
 	}
 }
